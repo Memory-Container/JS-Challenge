@@ -6,7 +6,10 @@ function setWelcomeMessage() {
     let name
     do {
         name = getUsername()
-    } while (name == null || name == undefined || name == '')
+    } while (name == '')
+    if (name == null) {
+        return 0;
+    }
     if (getHour() < 12) {
         document.body.innerHTML = `Good morning ${name}!`
     } else if (getHour() >= 12 && getHour() < 18) {
